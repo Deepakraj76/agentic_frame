@@ -1,0 +1,10 @@
+Stored Procedure,Table Names,Join Tables,Join Type,Join Condition
+sp_Profile_Select_Section_D,ProfileLab,,,
+GetEmployeeDetails,Employees e,Departments d,INNER JOIN,e.DepartmentID = d.DepartmentID
+GetEmployeeDetails,Employees e,Projects p,INNER JOIN,e.EmployeeID = p.EmployeeID
+GetEmployeeDetails,Employees e,Departments d,LEFT JOIN,e.DepartmentID = d.DepartmentID
+GetEmployeeDetails,Employees e,Projects p,LEFT JOIN,e.EmployeeID = p.EmployeeID
+GetEmployeeDetails,Employees e,Departments d,RIGHT JOIN,e.DepartmentID = d.DepartmentID
+GetEmployeeDetails,Employees e,Projects p,RIGHT JOIN,e.EmployeeID = p.EmployeeID
+GetEmployeeDetails,Employees e,Departments d,FULL OUTER JOIN,e.DepartmentID = d.DepartmentID
+GetEmployeeDetails,Employees e,Projects p,FULL OUTER JOIN,e.EmployeeID = p.EmployeeID
