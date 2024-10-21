@@ -1,0 +1,52 @@
+
+CREATE TABLE [dbo].[_GeneratorType](
+	[generator_type_id] [int] Not NULL,     				-- Added Not NULL, primary key
+	[generator_type] [varchar](20) Not NULL,            			-- Added Not NULL   
+	[added_by] [varchar](100) NOT NULL,               			-- Added new column
+	[date_added] [datetime] NOT NULL,                   			-- Added new column
+	[modified_by] [varchar](100) NOT NULL,					-- Added new column
+	[date_modified] [datetime] NOT NULL, 					-- Added new column
+	CONSTRAINT [PK_GeneratorType] PRIMARY KEY CLUSTERED ([generator_type_id])
+
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[_GeneratorSiteType](
+	[generator_site_type_id] [int] NOT NULL,            				-- Added primary key               
+	[generator_site_type] [varchar](40) NOT NULL,
+	[generator_site_type_abbr] [varchar](10) NOT NULL,
+	[added_by] [varchar](100) NOT NULL,                              		-- Datatype length 10 >100,Changed to NOT NULL
+	[date_added] [datetime] NOT NULL,                               		-- Changed to NOT NULL
+	[modified_by] [varchar](100) NOT NULL,				            	-- Datatype length 10 >100,Changed to NOT NULL
+	[date_modified] [datetime] NOT NULL , 						-- Added default value
+	CONSTRAINT [PK_GeneratorSiteType] PRIMARY KEY CLUSTERED ([generator_site_type_id])
+
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[_County](
+	[county_code] [int] NOT NULL,                      				-- Added Not NULL primary key  
+	[county_name] [varchar](30) NOT NULL,                          			-- Added Not NULL  
+	[state] [varchar](2) NULL,
+	[added_by] [varchar](100) NOT NULL,                              		-- Datatype length 10 >100,Changed to NOT NULL
+	[date_added] [datetime] NOT NULL,                               		-- Changed to NOT NULL
+	[modified_by] [varchar](100) NOT NULL,				            	-- Datatype length 10 >100,Changed to NOT NULL
+	[date_modified] [datetime] NOT NULL , 						-- Added default value and change to NOT NULL
+	CONSTRAINT [PK_County] PRIMARY KEY CLUSTERED ([county_code])
+	
+) ON [PRIMARY]
+Go
+
+CREATE TABLE [dbo].[_GeocodeQualityCode](
+	[geocode_id] [int] NOT NULL,    						-- Primary key added                   
+	[geocode_quality] [varchar](40) NULL,
+	[added_by] [varchar](100) NOT NULL,						-- Datatype length 10 >100
+	[date_added] [datetime] NOT NULL,
+	[modified_by] [varchar](100) NOT NULL,						-- Datatype length 10 >100
+	[date_modified] [datetime] NOT NULL),						
+	CONSTRAINT [PK_GeocodeQualityCode] PRIMARY KEY CLUSTERED (geocode_id)
+) ON [PRIMARY]
+GO
+
+
+

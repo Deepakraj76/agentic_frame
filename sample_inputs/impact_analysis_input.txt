@@ -1,0 +1,14 @@
+CREATE TABLE employees (
+    [employee_id] [int] IDENTITY(1,1) NOT NULL,                              -- existing primary key, changed the order to top
+      NOT NULL,                                    -- datatype changed from varchar(50) to varchar(100)
+      NOT NULL,                                     -- datatype changed from varchar(50) to varchar(100)
+      NOT NULL,                                    -- datatype changed from varchar(50) to varchar(100), NOT NULL constraint added
+    [salary] [decimal](12,2) NOT NULL,                                       -- decimal(10,2) changed to decimal(12,2)
+    [hire_date] [datetime] NULL,                                             -- column type changed from DATE to DATETIME
+      NULL,                                             -- new column added for storing employee email
+    [created_by] VARCHAR(100) NOT NULL CONSTRAINT [DF_Employees_created_by] DEFAULT SYSTEM_USER,   -- new column added for tracking creation
+    [date_added] DATETIME NOT NULL CONSTRAINT [DF_Employees_date_added] DEFAULT GETDATE(),         -- new column added for creation date with default
+    [modified_by] VARCHAR(100) NULL CONSTRAINT [DF_Employees_modified_by] DEFAULT SYSTEM_USER,     -- new column added for modification tracking
+    [date_modified] DATETIME NULL CONSTRAINT [DF_Employees_date_modified] DEFAULT GETDATE(),       -- new column added for modification date with default
+    CONSTRAINT [PK_Employees] PRIMARY KEY CLUSTERED (employee_id ASC)
+);
